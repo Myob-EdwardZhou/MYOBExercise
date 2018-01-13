@@ -1,0 +1,22 @@
+---
+tax_rules:
+  - min_income: 0
+    max_income: 18200
+    base_tax: 0
+    tax_rate: 0
+  - min_income: 18201
+    max_income: 37000
+    base_tax: 0
+    tax_rate: 0.19
+  - min_income: 37001
+    max_income: 87000
+    base_tax: 3572
+    tax_rate: 0.325
+  - min_income: 87001
+    max_income: 180000
+    base_tax: 19822
+    tax_rate: 0.37
+  - min_income: 180001
+    max_income: null
+    base_tax: 54232
+    tax_rate: 0.45
