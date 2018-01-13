@@ -1,0 +1,33 @@
+Documentation:
+  Enabled: false
+LineLength:
+  Max: 120
+MethodLength:
+  Max: 20
+  Exclude:
+Metrics/ModuleLength:
+  Exclude:
+FrozenStringLiteralComment:
+  Enabled: false
+MutableConstant:
+  Enabled: false
+FormatStringToken:
+  Enabled: false
+RescueStandardError:
+  Enabled: false
+SignalException:
+  Enabled: false
+UriEscapeUnescape:
+  Enabled: false
+BlockLength:
+  Enabled: false
+MultilineMethodCallBraceLayout:
+  Enabled: false
+IndentArray:
+  Enabled: false
+EmptyLinesAroundArguments:
+  Enabled: false
+MixinUsage:
+  Enabled: false
+PercentLiteralDelimiters:
+  Enabled: false
