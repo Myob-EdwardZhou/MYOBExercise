@@ -1,4 +1,6 @@
 require 'simplecov'
+require_relative '../lib/boot'
+
 SimpleCov.start
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
