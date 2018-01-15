@@ -5,5 +5,7 @@ class PayslipProcessor
 
   def run
     csv_data = CSVParser.new(@csv_file)
+
+    CSVValidator.new(csv_data).validate
   end
 end
