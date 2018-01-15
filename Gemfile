@@ -9,6 +9,7 @@ ruby '2.5.0'
 gem 'rake'
 gem 'colorize'
 gem 'activesupport'
+gem 'virtus'
 gem 'require_all'
 
 group 'development, test' do

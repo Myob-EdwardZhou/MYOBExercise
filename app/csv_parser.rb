@@ -14,15 +14,15 @@ class CSVParser
     @csv = CSV.read(csv_file, headers: true)
   end
 
-  def map_to_employee
+  def map_to_employees
     @csv.map do |row|
-      {
+      Employee.new(
         first_name:         row[ROW_INDICES[:first_name]],
         last_name:          row[ROW_INDICES[:last_name]],
         annual_salary:      row[ROW_INDICES[:annual_salary]],
         super_rate:         row[ROW_INDICES[:super_rate]],
         payment_start_date: row[ROW_INDICES[:payment_start_date]]
-      }
+      )
     end
   end
 

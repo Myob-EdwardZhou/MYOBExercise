@@ -2,11 +2,22 @@ RSpec.describe CSVParser do
   let(:csv_file_path) { 'employee_pay_slip.csv' }
   let(:input_csv) { described_class.new(csv_file_path) }
 
-  describe '#map_to_employee' do
-    subject { input_csv.map_to_employee }
+  describe '#map_to_employees' do
+    subject(:employees) { input_csv.map_to_employees }
 
-    it { is_expected.to eq [{ first_name: 'David', last_name: 'Rudd', annual_salary: '60050',  super_rate: '9%',  payment_start_date: '01 March - 31 March' },
-                            { first_name: 'Ryan',  last_name: 'Chen', annual_salary: '120000', super_rate: '10%', payment_start_date: '01 March - 31 March' }] }
+    describe 'first employee' do
+      subject { employees.first }
+
+      it { is_expected.to be_a Employee }
+      it { is_expected.to have_attributes({ first_name: 'David', last_name: 'Rudd', annual_salary: 60050,  super_rate: '9%',  payment_start_date: '01 March - 31 March' }) }
+    end
+
+    describe 'second employee' do
+      subject { employees.second }
+
+      it { is_expected.to be_a Employee }
+      it { is_expected.to have_attributes({ first_name: 'Ryan',  last_name: 'Chen', annual_salary: 120000, super_rate: '10%', payment_start_date: '01 March - 31 March' }) }
+    end
   end
 
   describe '#headers' do
