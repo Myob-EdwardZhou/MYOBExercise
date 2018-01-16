@@ -14,6 +14,10 @@ class CSVParser
     @csv = CSV.read(csv_file, headers: true)
   end
 
+  def entries
+    @csv
+  end
+
   def map_to_employees
     @csv.map do |row|
       Employee.new(
