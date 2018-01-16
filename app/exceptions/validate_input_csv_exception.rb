@@ -1,0 +1,2 @@
+class ValidateInputCSVException < StandardError
+end

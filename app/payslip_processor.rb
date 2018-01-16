@@ -1,11 +1,10 @@
 class PayslipProcessor
-  def initialize(payment_csv)
-    @csv_file = payment_csv
+  def initialize(input_csv)
+    @csv_data = CSVParser.new(input_csv)
   end
 
   def run
-    csv_data = CSVParser.new(@csv_file)
-
-    CSVValidator.new(csv_data).validate
+    CSVValidator.new(@csv_data).validate
+    # operator.operate(@csv_data)
   end
 end
