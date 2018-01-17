@@ -31,7 +31,7 @@ class CSVParser
   end
 
   def headers
-    @csv.headers
+    @headers ||= @csv.headers
   end
 
   %w(first_names last_names annual_salaries super_rates payment_start_dates).map do |method_name|
