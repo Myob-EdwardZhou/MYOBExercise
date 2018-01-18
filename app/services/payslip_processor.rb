@@ -6,6 +6,6 @@ class PayslipProcessor
   def run
     CSVValidator.new(@csv_data).validate
 
-    OutputCSVGenerator.new(@csv_data).generate
+    PayslipCSVGenerator.new(@csv_data).generate
   end
 end
