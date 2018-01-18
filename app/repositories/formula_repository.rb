@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'singleton'
 require 'yaml'
 
 class FormulaRepository
   include Singleton
 
-  def find_formula(annual_salary)
+  def find_formula_by(annual_salary)
     formulas.find { |formula| annual_salary >= formula.min_income && annual_salary <= formula.max_income }
   end
 

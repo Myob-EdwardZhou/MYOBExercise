@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_support/all'
 
 class CSVValidator::PaymentStartDateValidator
@@ -5,7 +7,7 @@ class CSVValidator::PaymentStartDateValidator
     @input_csv = input_csv
   end
 
-  def validate
+  def validate!
     unless start_date_is_valid? && end_date_is_valid? && payment_period_is_full_month?
       raise ValidateInputCSVException, 'invalid_payment_period'
     end

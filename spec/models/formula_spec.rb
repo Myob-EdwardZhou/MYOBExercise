@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 RSpec.describe Formula do
   describe '#generate_payslip' do
-    let(:formula)             { Formula.new(min_income: 37001, max_income: 87000, base_tax: 3572, tax_rate: 0.325) }
+    let(:formula)             { Formula.new(min_income: 37_001, max_income: 87_000, base_tax: 3572, tax_rate: 0.325) }
     let(:name)                { double(:name) }
-    let(:annual_salary)       { 60050 }
+    let(:annual_salary)       { 60_050 }
     let(:super_rate)          { '9%' }
     let(:payment_start_date)  { '1 March - 31 March' }
 

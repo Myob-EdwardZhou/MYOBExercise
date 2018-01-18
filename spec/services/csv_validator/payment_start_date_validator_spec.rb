@@ -1,7 +1,9 @@
-RSpec.describe CSVValidator::PaymentStartDateValidator, '#validate' do
+# frozen_string_literal: true
+
+RSpec.describe CSVValidator::PaymentStartDateValidator, '#validate!' do
   let(:input_csv) { CSVParser.new(csv_file_path) }
 
-  subject { described_class.new(input_csv).validate }
+  subject { described_class.new(input_csv).validate! }
 
   context 'with a csv file that has a payment period start date is not the beginning of month' do
     let(:csv_file_path) { 'spec/fixtures/validations/invalid_payment_start_date.csv' }

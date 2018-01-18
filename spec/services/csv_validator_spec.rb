@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe CSVValidator do
   describe '#validate' do
     let(:header_validator)              { double(:header_validator) }
@@ -12,51 +14,51 @@ RSpec.describe CSVValidator do
     before do
       allow(CSVValidator::HeaderValidator).to receive(:new)
         .with(input_csv).and_return(header_validator)
-      allow(header_validator).to receive(:validate)
+      allow(header_validator).to receive(:validate!)
 
       allow(CSVValidator::ValuePresenceValidator).to receive(:new)
         .with(input_csv).and_return(value_presence_validator)
-      allow(value_presence_validator).to receive(:validate)
+      allow(value_presence_validator).to receive(:validate!)
 
       allow(CSVValidator::AnnualSalaryValidator).to receive(:new)
         .with(input_csv).and_return(annual_salary_validator)
-      allow(annual_salary_validator).to receive(:validate)
+      allow(annual_salary_validator).to receive(:validate!)
 
       allow(CSVValidator::SuperRateValidator).to receive(:new)
         .with(input_csv).and_return(super_rate_validator)
-      allow(super_rate_validator).to receive(:validate)
+      allow(super_rate_validator).to receive(:validate!)
 
       allow(CSVValidator::PaymentStartDateValidator).to receive(:new)
         .with(input_csv).and_return(payment_start_date_validator)
-      allow(payment_start_date_validator).to receive(:validate)
+      allow(payment_start_date_validator).to receive(:validate!)
     end
 
     it 'validate headers' do
-      expect(header_validator).to receive(:validate)
+      expect(header_validator).to receive(:validate!)
 
       subject
     end
 
     it 'validate value presence' do
-      expect(value_presence_validator).to receive(:validate)
+      expect(value_presence_validator).to receive(:validate!)
 
       subject
     end
 
     it 'validate annual salary' do
-      expect(annual_salary_validator).to receive(:validate)
+      expect(annual_salary_validator).to receive(:validate!)
 
       subject
     end
 
     it 'validate super rate' do
-      expect(super_rate_validator).to receive(:validate)
+      expect(super_rate_validator).to receive(:validate!)
 
       subject
     end
 
     it 'validate payment start date' do
-      expect(payment_start_date_validator).to receive(:validate)
+      expect(payment_start_date_validator).to receive(:validate!)
 
       subject
     end

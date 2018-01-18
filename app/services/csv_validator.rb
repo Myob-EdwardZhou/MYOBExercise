@@ -1,18 +1,20 @@
+# frozen_string_literal: true
+
 class CSVValidator
-  VALIDATORS = %w(
+  VALIDATORS = %w[
     HeaderValidator
     ValuePresenceValidator
     AnnualSalaryValidator
     PaymentStartDateValidator
     SuperRateValidator
-  )
+  ].freeze
 
   def initialize(input_csv)
     @input_csv = input_csv
   end
 
   def validate
-    validators.each(&:validate)
+    validators.each(&:validate!)
   end
 
   private

@@ -1,14 +1,14 @@
+# frozen_string_literal: true
+
 class CSVValidator::HeaderValidator
-  CSV_HEADERS = ['first name', 'last name', 'annual salary', 'super rate', 'payment start date']
+  CSV_HEADERS = ['first name', 'last name', 'annual salary', 'super rate', 'payment start date'].freeze
 
   def initialize(input_csv)
     @input_csv = input_csv
   end
 
-  def validate
-    unless headers_name_valid? && headers_presence?
-      raise ValidateInputCSVException, 'invalid_headers'
-    end
+  def validate!
+    raise ValidateInputCSVException, 'invalid_headers' unless headers_name_valid? && headers_presence?
   end
 
   private

@@ -1,33 +1,135 @@
+AbcSize:
+  Enabled: false
+
+AccessorMethodName:
+  Enabled: false
+
+AlignHash:
+  Enabled: false
+
+AlignParameters:
+  Enabled: false
+
+AssignmentInCondition:
+  Enabled: false
+
+CaseIndentation:
+  Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false
+
+CollectionMethods:
+  PreferredMethods:
+    inject: 'inject'
+    detect: 'detect'
+
+CyclomaticComplexity:
+  Enabled: false
+
 Documentation:
   Enabled: false
+
+DoubleNegation:
+  Enabled: false
+
+EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'db/schema.rb'
+
+EmptyLineBetweenDefs:
+  Enabled: false
+
+EndAlignment:
+  Enabled: false
+
+FormatString:
+  Enabled: false
+
+GuardClause:
+  Enabled: false
+
+HasAndBelongsToMany:
+  Enabled: false
+
+IfUnlessModifier:
+  Enabled: false
+
+IndentationWidth:
+  Enabled: false
+
+Lambda:
+  Enabled: false
+
 LineLength:
   Max: 120
+  Exclude:
+    - 'spec/**/*'
+    - 'config/initializers/*'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'spec/**/*.rb'
 MethodLength:
   Max: 20
   Exclude:
-Metrics/ModuleLength:
-  Exclude:
-FrozenStringLiteralComment:
+    - 'db/migrate/*'
+    - 'app/controllers/api/api_controller.rb'
+
+Metrics/ClassLength:
+  Max: 105
+
+Metrics/PerceivedComplexity:
+  Max: 10
+
+MultilineBlockChain:
   Enabled: false
-MutableConstant:
+
+Next:
   Enabled: false
-FormatStringToken:
+
+NumericLiterals:
   Enabled: false
-RescueStandardError:
+
+RescueModifier:
   Enabled: false
+
+ShadowingOuterLocalVariable:
+  Enabled: false
+
 SignalException:
+  EnforcedStyle: only_raise
+
+SingleLineBlockParams:
   Enabled: false
-UriEscapeUnescape:
+
+SpaceBeforeFirstArg:
   Enabled: false
-BlockLength:
+
+SpaceAroundOperators:
   Enabled: false
-MultilineMethodCallBraceLayout:
+
+SpaceInsideParens:
   Enabled: false
-IndentArray:
+
+SpaceInsideRangeLiteral:
   Enabled: false
-EmptyLinesAroundArguments:
+
+StringLiterals:
   Enabled: false
-MixinUsage:
+
+TrivialAccessors:
+  ExactNameMatch: true
+
+UnusedBlockArgument:
   Enabled: false
-PercentLiteralDelimiters:
+
+UnusedMethodArgument:
   Enabled: false
+
+WordArray:
+  MinSize: 2

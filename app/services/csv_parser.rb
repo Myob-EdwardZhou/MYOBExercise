@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 require 'active_support/all'
 
@@ -34,7 +36,7 @@ class CSVParser
     @headers ||= @csv.headers
   end
 
-  %w(first_names last_names annual_salaries super_rates payment_start_dates).map do |method_name|
+  %w[first_names last_names annual_salaries super_rates payment_start_dates].map do |method_name|
     define_method method_name do
       @csv.map { |row| row[ROW_INDICES[method_name.singularize.to_sym]] }
     end

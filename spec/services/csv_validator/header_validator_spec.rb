@@ -1,7 +1,9 @@
-RSpec.describe CSVValidator::HeaderValidator, '#validate' do
+# frozen_string_literal: true
+
+RSpec.describe CSVValidator::HeaderValidator, '#validate!' do
   let(:input_csv) { CSVParser.new(csv_file_path) }
 
-  subject { described_class.new(input_csv).validate }
+  subject { described_class.new(input_csv).validate! }
 
   context 'with a csv file that has a invalid header' do
     let(:csv_file_path) { 'spec/fixtures/validations/invalid_header_name.csv' }

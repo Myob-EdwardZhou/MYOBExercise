@@ -1,12 +1,12 @@
+# frozen_string_literal: true
+
 class CSVValidator::ValuePresenceValidator
   def initialize(input_csv)
     @input_csv = input_csv
   end
 
-  def validate
-    unless all_values_present?
-      raise ValidateInputCSVException, 'missing_value'
-    end
+  def validate!
+    raise ValidateInputCSVException, 'missing_value' unless all_values_present?
   end
 
   private
