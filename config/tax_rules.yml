@@ -17,6 +17,6 @@ tax_rules:
     base_tax: 19822
     tax_rate: 0.37
   - min_income: 180001
-    max_income: null
+    max_income: INF
     base_tax: 54232
     tax_rate: 0.45
