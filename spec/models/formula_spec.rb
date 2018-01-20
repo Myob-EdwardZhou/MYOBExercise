@@ -11,7 +11,7 @@ RSpec.describe Formula do
     subject { formula.generate_payslip(name, annual_salary, super_rate, payment_start_date) }
 
     it 'generate a payslip object with correct attributes' do
-      expect(Payslip).to receive(:new).with(name: name, gross_income: 5004, income_tax: 922, net_income: 4082, super_number: 450, payment_start_date: payment_start_date)
+      expect(Payslip).to receive(:new).with(name: name, gross_income: 5004, income_tax: 922, net_income: 4082, super_number: 450, pay_period: '1 March - 31 March')
 
       subject
     end

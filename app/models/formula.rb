@@ -28,7 +28,7 @@ class Formula
       income_tax: income_tax,
       net_income: net_income,
       super_number: super_number,
-      payment_start_date: payment_start_date
+      pay_period: payment_start_date
     )
   end
 
