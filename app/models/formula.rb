@@ -35,11 +35,11 @@ class Formula
   private
 
   def calculate_gross_income_by(annual_salary)
-    (annual_salary / TWELVE_MONTH.to_f).floor
+    (annual_salary / TWELVE_MONTH.to_f).round
   end
 
   def calculate_income_tax_by(annual_salary)
-    ((@base_tax + (annual_salary - @min_income) * @tax_rate) / TWELVE_MONTH.to_f).ceil
+    ((@base_tax + (annual_salary - (@min_income - 1)) * @tax_rate) / TWELVE_MONTH.to_f).round
   end
 
   def calculate_net_income_by(gross_income, income_tax)
@@ -47,7 +47,7 @@ class Formula
   end
 
   def calculate_super_number_by(gross_income, super_rate)
-    (gross_income * percentage_to_float(super_rate)).floor
+    (gross_income * percentage_to_float(super_rate)).round
   end
 
   def percentage_to_float(percentage)

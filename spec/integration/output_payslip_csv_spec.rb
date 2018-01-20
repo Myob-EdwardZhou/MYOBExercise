@@ -6,7 +6,7 @@ RSpec.describe 'employee pay slip csv' do
     [
       ['name', 'pay period', 'gross income', 'income tax', 'net income', 'super'],
       ['David Rudd', '01 March - 31 March', '5004', '922', '4082', '450'],
-      ['Ryan Chen', '01 March - 31 March', '10000', '2670', '7330', '1000']
+      ['Ryan Chen', '01 March - 31 March', '10000', '2669', '7331', '1000']
     ]
   end
 
