@@ -5,7 +5,7 @@ Monkeyking
 
 Monkeyking is a custom built payslip CSV generator, its purpose is to help accountant get employee's payslip in a much faster, easier and accurate way
 
-![](./monkeyking.jpeg)
+![](monkeyking.jpeg)
 
 ### Custodian(s)
 
@@ -17,21 +17,29 @@ Git is only used for version control in this project, this project was never bee
 
 ### Getting Started
 
-Before using Monkeyking, you should already have [ruby](https://www.ruby-lang.org/en/downloads) 2.5.0, and [rubygems](https://rubygems.org/pages/download) installed for your chosen OS.  Once ruby and rubygems is installed, install the bundler gem:
+Extract the monkeyking package using tar into a directory of your choosing:
+
+```shell
+$ tar -xvzf monkeyking.tar.gz
+```
+
+Before using Monkeyking, you should already have [ruby](https://www.ruby-lang.org/en/downloads) 2.5.0 or [docker](https://www.docker.com/) installed for your chosen OS.
+
+if ruby 2.5.0 has been installed, install the bundler gem:
 
 ``` shell
-gem install bundler
+$ gem install bundler
 ```
 
-Once you have installed those, extract the monkeyking package using tar into a directory of your choosing:
-
+then In the extracted directory, install the prerequisite gems:
 ```shell
-tar -xvzf Monkeyking.tar.gz
+$ bundle install
 ```
 
-In the extracted directory, install the prerequisite gems:
-```shell
-bundle install
+or without ruby on your local environment
+
+``` shell
+$ docker build -t monkeyking .
 ```
 
 ### Running Monkeyking
@@ -56,19 +64,23 @@ In order to make this simple, I have also provided an example file, so you can j
 bundle exec rake monkeyking:output_payslip_csv
 ```
 
+or
+
+``` shell
+docker run -v ${PWD}/output:/app/output monkeyking
+```
+
 then the output payslip CSV file could be found under output directory named `payslips.csv`
 
 ### Development
 
-Testing(style check/quality threshold check/Unit Test)
+#### Testing(style check/quality threshold check/Unit Test)
 
 ```
 $ bundle exec rake
 ```
 
-
 ### Could be improved
 1. Add a tax rule checker to check if tax rule configuration file is valid
 2. Check Input CSV file existance before parsing
 3. Logs
-4. Running in docker environment

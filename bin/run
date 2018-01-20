@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+bundle exec rake monkeyking:output_payslip_csv
