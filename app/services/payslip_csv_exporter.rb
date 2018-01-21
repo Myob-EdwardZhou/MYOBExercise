@@ -17,10 +17,4 @@ class PayslipCSVExporter
       end
     end
   end
-
-  private
-
-  def file_name(format = 'csv')
-    "#{Monkeyking.project_root}/output/#{Time.now.strftime('%Y-%m-%d %H:%M:%S')}.#{format}"
-  end
 end

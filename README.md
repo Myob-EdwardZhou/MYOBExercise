@@ -17,10 +17,10 @@ Git is only used for version control in this project, this project was never bee
 
 ### Getting Started
 
-Extract the monkeyking package using tar into a directory of your choosing:
+Extract the monkeyking package using `unzip` into a directory of your choosing:
 
 ```shell
-$ tar -xvzf monkeyking.tar.gz
+$ unzip monkeyking.zip
 ```
 
 Before using Monkeyking, you should already have [ruby](https://www.ruby-lang.org/en/downloads) 2.5.0 or [docker](https://www.docker.com/) installed for your chosen OS.
@@ -31,7 +31,7 @@ if ruby 2.5.0 has been installed, install the bundler gem:
 $ gem install bundler
 ```
 
-then In the extracted directory, install the prerequisite gems:
+then in the extracted directory, install the prerequisite gems:
 ```shell
 $ bundle install
 ```
@@ -44,7 +44,7 @@ $ docker build -t monkeyking .
 
 ### Running Monkeyking
 
-Finally, you’re ready to run Monkeyking. before running finnal command, the input CSV file must be named as `employees_salary.csv` under root directory, CSV header must be as below
+Finally, you’re ready to run Monkeyking. before running finnal command, the input CSV file must be named as `employees_salary.csv` in root directory, CSV header must be as below
 
 ``` csv
 first name,last name,annual salary,super rate,payment start date
@@ -70,7 +70,7 @@ or
 docker run -v ${PWD}/output:/app/output monkeyking
 ```
 
-then the output payslip CSV file could be found under output directory named `payslips.csv`
+then the output payslip CSV file could be found in output directory named `payslips.csv`
 
 ### Development
 
